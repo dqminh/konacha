@@ -11,6 +11,7 @@ require "rspec/autorun"
 require "coffee_script"
 require "ejs"
 
+require "capybara/rspec"
 require "capybara/rails"
 require "capybara/firebug"
 
@@ -30,5 +31,7 @@ module Konacha
 end
 
 RSpec.configure do |config|
+  config.include Capybara::DSL
+  config.include Capybara::RSpecMatchers
   config.include Konacha::RequestSpec, :type => :request
 end

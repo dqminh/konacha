@@ -6,7 +6,6 @@ begin
   require "active_model/railtie"
 rescue LoadError
 end
-
 require "sprockets/railtie"
 
 if defined?(Bundler)
